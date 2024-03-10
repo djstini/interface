@@ -54,7 +54,7 @@ function sortData(data){
 }
 
 function getHeighestOverallUsage(){
-    var heightestUsage = 0;
+    heightestUsage = 0;
     datastore.forEach(function(dataset){
         allUsage = parseFloat(dataset.usage[dataset.usage.length - 1].usage);
         if( allUsage > heightestUsage){
@@ -137,7 +137,7 @@ function render(){
     datastore.forEach((dataset, index) => {
         points.push({
             "x": index * usageGraphicWidthStepsize,
-            "y": parseFloat(dataset.usage[dataset.usage.length - 1]) * usageGraphicHeightStepsize,
+            "y": parseFloat(dataset.usage[dataset.usage.length - 1].usage) * usageGraphicHeightStepsize,
         });
     });
     console.log(points);
