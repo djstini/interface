@@ -56,8 +56,9 @@ function sortData(data){
 function getHeighestOverallUsage(){
     var heightestUsage = 0;
     datastore.forEach(function(dataset){
-        if(parseFloat(dataset.usage[dataset.usage.length - 1].usage) > heightestUsage){
-            heightestUsage = parseFloat(dataset.usage[dataset.usage.length - 1].usage)
+        allUsage = parseFloat(dataset.usage[dataset.usage.length - 1].usage);
+        if( allUsage > heightestUsage){
+            heightestUsage = allUsage;
         }
     });
     console.log(heightestUsage);
