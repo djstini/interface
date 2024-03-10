@@ -54,27 +54,6 @@
 	<script src="/data.js"></script>
 </head>
 
-<?php
-
-$output_disk = array();
-exec('df -h | grep dev/md127 | awk \'{print "<tr><td>"$2"</td><td>"$3"</td><td>"$4"</td><td>"$5"</td></tr>"}\'', $output_disk);
-
-$output_top = array();
-exec('mpstat -u -P ALL 1 1 | awk \'
-	NR == 1 {next}
-	NR == 2 {next}
-	NR == 3 {next}
-	NR > 20 {next}
-        {sum[$2] += $3; sum[$2] += $4; sum[$2] += $5;}
-	END { for (i in sum) {
-            print "<tr><td>"i"</td><td>"sum[i]"</td></tr>"}
-        }
-\' | sort -nk1', $output_top);
-
-$output_temp = array();
-exec('sensors | grep -E "Core|Sensor" | awk \'{print "<tr><td>"$1" "$2"</td><td>"$3"</td></tr>"} \'', $output_temp);
-
-?>
 <h1><a class="no-decoration" href="/">INTERFACE</a></h1>
 
 <div>
@@ -83,35 +62,20 @@ exec('sensors | grep -E "Core|Sensor" | awk \'{print "<tr><td>"$1" "$2"</td><td>
 
 <div>
 <h2>DISK SPACE</h2>
-<table><tr><th>SIZE</th><th>USED</th><th>Avail</th><th>Use%</th></tr>
-<?php
-foreach($output_disk as $line){ 
-      echo $line;
-}
-?>
+<table class="disk-table"><tr><th>SIZE</th><th>USED</th><th>Avail</th><th>Use%</th></tr>
 </table>
 </div>
 
 <div>
 <h2>PROCESSOR USAGE</h2>
-<table>
+<table class="usage-table">
 <tr><th>CORE (all is the avg across all cores)</th><th>USAGE in %</th></tr>
-<?php
-foreach($output_top as $line){ 
-        echo $line;
-    }
-?>
 </table>
 </div>
 
 
 <div>
 <h2>Temperatures in C</h2>
-<table>
-<?php
-foreach($output_temp as $line){ 
-        echo $line;
-    }
-?>
+<table class="temperature-table">
 </table>
 </div>
