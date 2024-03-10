@@ -148,7 +148,14 @@ function render(){
             prevPoint = {"x" : 0, "y" : 0};
         }
         
-        usageGraphic.append('<line x1="' + prevPoint.x + '" y1="' + prevPoint.y + '" x2="' + point.x + '" y2="' + point.y + '" style="stroke:red;stroke-width:2"/>');
+        var newLine = document.createElementNS('http://www.w3.org/2000/svg','line');
+        newLine.setAttribute('id','line2');
+        newLine.setAttribute('x1',prevPoint.x);
+        newLine.setAttribute('y1',prevPoint.y);
+        newLine.setAttribute('x2',point.y);
+        newLine.setAttribute('y2','300');
+        newLine.setAttribute("stroke", "red")
+        usageGraphic.append(newLine);
     });
 }
 
