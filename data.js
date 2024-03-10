@@ -9,9 +9,7 @@ async function mainLoop(){
     addData(sortedData);
     render();
     console.log(datastore);
-    setTimeout(() => {
-        mainLoop();
-    }, 200);
+    mainLoop();
 }
 
 function addData(data){
