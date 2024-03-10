@@ -39,7 +39,11 @@
 			column-gap: 1em;
 		}
 
-		.svg-labels{
+		.usage-graphic-container{
+			display:flex;
+		}
+
+		.usage-svg-labels{
 			display:flex;
 			flex-direction: column;
 			height: 300px;
@@ -79,7 +83,7 @@
 <table class="usage-table">
 <tr><th>CORE (all is the avg across all cores)</th><th>USAGE in %</th></tr>
 </table>
-<div class="graphic-container">
+<div class="usage-graphic-container">
 <svg class="usage-graphic" height="300" width="500" xmlns="http://www.w3.org/2000/svg">
 </svg>
 <div class="usage-svg-lables"></div>
