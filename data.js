@@ -35,6 +35,7 @@ function getData(){
 
 function render(){
     let latestData = datastore[datastore.length - 1];
+    console.log(datastore);
     console.log(latestData);
     let disksTable = jQuery(".disk-table");
     let usageTable = jQuery(".usage-table");
