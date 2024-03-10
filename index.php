@@ -54,7 +54,7 @@
 		.usage-svg-labels{
 			display:flex;
 			flex-direction: column;
-			height: 300px;
+			height: 100%;
 			background: #88ddd8;
 		}
 
