@@ -148,7 +148,7 @@ function render(){
             prevPoint = {"x" : 0, "y" : 0};
         }
         
-        usageGraphic.append('<line x1="' + prevPoint.x + '" y1="' + prevPoint.y + '" x2="' + point.x + '" y2="' + point.y + '" />');
+        usageGraphic.append('<line x1="' + prevPoint.x + '" y1="' + prevPoint.y + '" x2="' + point.x + '" y2="' + point.y + '" style="stroke:red;stroke-width:2"/>');
     });
 }
 
