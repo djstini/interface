@@ -1,5 +1,5 @@
 <?php header("X-Robots-Tag: noindex, nofollow", true); ?>
-<?php header("Refresh: 1;url='https://interface.nonagon.dev'", true); ?>
+
 <head>
 	<style>
 		table{
@@ -50,8 +50,8 @@
 	<script>
 		RESTURL = "<?php echo $_SERVER['SERVER_NAME'] . "/rest.php"; ?>";
 	</script>
-	<script src="/jquery.min.js" />
-	<script src="/data.js" />
+	<script src="<?php echo $_SERVER['SERVER_NAME'] . "/jquery.min.js"; ?>" />
+	<script src="<?php echo $_SERVER['SERVER_NAME'] . "/data.js"; ?>" />
 </head>
 
 <?php
