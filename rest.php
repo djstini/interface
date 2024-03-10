@@ -22,26 +22,17 @@ $output_temp = array();
 exec('sensors | grep -E "Core|Sensor" | awk \'{print "{ core: "$1" "$2", temp: "$3", },"} \'', $output_temp);
 
 ?>
-{
-disk: [
-    <?php
-    foreach($output_disk as $line){ 
+{ disk: [ <?php
+foreach($output_disk as $line){ 
+    echo $line;
+}
+?> ], top: [ <?php
+foreach($output_top as $line){ 
         echo $line;
     }
-    ?>
-],
-top: [
-    <?php
-    foreach($output_top as $line){ 
-            echo $line;
-        }
-    ?>
-],
-temps: [
-    <?php
-    foreach($output_temp as $line){ 
-            echo $line;
-        }
-    ?>    
-],
-}
+?> ], temps: [
+<?php
+foreach($output_temp as $line){ 
+        echo $line;
+    }
+?> ],}
