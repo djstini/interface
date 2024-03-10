@@ -56,13 +56,13 @@
 			flex-direction: column;
 			height: 300px;
 			background: #88ddd8;
-			padding: 1em;
 		}
 
 		.usage-svg-labels span {
   			display: flex;
   			align-items: end;
 			border: 1px solid;
+			padding: 1em;
 		}
 
 		@media screen and (max-width: 1230px){
