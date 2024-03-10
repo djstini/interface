@@ -48,7 +48,7 @@
 		}
 	</style>
 	<script>
-		let RESTURL = "<?php echo $_SERVER['SERVER_NAME'] . "/rest.php"; ?>";
+		let RESTURL = "<?php echo "https://" . $_SERVER['SERVER_NAME'] . "/rest.php"; ?>";
 	</script>
 	<script src="/jquery.min.js"></script>
 	<script src="/data.js"></script>
