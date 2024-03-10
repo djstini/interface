@@ -84,10 +84,9 @@
 <tr><th>CORE (all is the avg across all cores)</th><th>USAGE in %</th></tr>
 </table>
 <div class="usage-graphic-container">
-<svg class="usage-graphic" height="300" width="500" xmlns="http://www.w3.org/2000/svg">
-</svg>
-<div class="usage-svg-lables"></div>
-<div>
+	<svg class="usage-graphic" height="300" width="500" xmlns="http://www.w3.org/2000/svg">
+	</svg>
+	<div class="usage-svg-labels"></div>
 </div>
 </div>
 
