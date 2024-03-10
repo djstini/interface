@@ -128,10 +128,11 @@ function render(){
 
     let usageGraphic = jQuery(".usage-graphic");
     usageGraphic.find("line").remove();
-    usageGraphicWidth = usageGraphic.width();
-    usageGraphicWidthStepsize = usageGraphicWidth / maxDataStoreLength;
-    usageGraphicHeight = usageGraphic.height();
-    usageGraphicHeightStepsize = usageGraphicHeight / getHeighestOverallUsage();
+    let usageGraphicWidth = usageGraphic.width();
+    let usageGraphicWidthStepsize = usageGraphicWidth / maxDataStoreLength;
+    let usageGraphicHeight = usageGraphic.height();
+    let heightesOverallUsage = getHeighestOverallUsage();
+    let usageGraphicHeightStepsize = usageGraphicHeight / heightesOverallUsage;
 
     let points = [];
     datastore.forEach((dataset, index) => {
@@ -145,14 +146,14 @@ function render(){
         if(index != 0){
             prevPoint = points[index - 1];
         } else {
-            prevPoint = {"x" : 0, "y" : 0};
+            return;
         }
         
         console.log("draw");
         console.log(point);
         console.log(prevPoint);
         var newLine = document.createElementNS('http://www.w3.org/2000/svg','line');
-        newLine.setAttribute('id','line2');
+        newLine.setAttribute('id','line');
         newLine.setAttribute('x1',prevPoint.x);
         newLine.setAttribute('y1',prevPoint.y);
         newLine.setAttribute('x2',point.x);
@@ -161,6 +162,15 @@ function render(){
         newLine.setAttribute("stroke-width", "2")
         usageGraphic.append(newLine);
     });
+
+    jQuery("svg-usage-label").remove();
+    let usageSvgLabelContainer = jQuery(".usage-svg-lables");
+    let labelHeight = usageSvgLabelContainer.height() / 5;
+    for( i = 5; i >= 0; i--){
+        usageSvgLabelContainer.append(
+            jQuery("<span>").addClass("svg-usage-label").height(labelHeight).text(heightesOverallUsage / 5 * i)
+        )
+    }
 }
 
 
