@@ -4,8 +4,7 @@ var datastore = [];
 mainLoop();
 
 function mainLoop(){
-    let freshData = getData();
-    addData(freshData);
+    getData();
     render();
     console.log(datastore);
     setTimeout(() => {
@@ -28,7 +27,8 @@ function getData(){
     jQuery.ajax({
         url: RESTURL,
         success: function (data)  {
-            return data;
+            console.log(data);
+            addData(data);
         },
     });
 }
