@@ -11,7 +11,7 @@ async function mainLoop(){
     console.log(datastore);
     setTimeout(() => {
         mainLoop();
-    }, 1000);
+    }, 200);
 }
 
 function addData(data){
