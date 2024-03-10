@@ -38,8 +38,6 @@ function getData(){
 }
 
 function sortData(data){
-    console.log("sort");
-    console.log(data);
     var sortedData = data;
     sortedData.usage = data.usage.sort(function (a, b) {
         if(a.core == "all"){
@@ -52,15 +50,14 @@ function sortData(data){
         b.usage = parseFloat(b.usage);
         return b.usage - a.usage;
     });
-    console.log(sortedData);
     return sortedData;
 }
 
 function getHeighestOverallUsage(){
     var heightestUsage = 0;
     datastore.forEach(function(dataset){
-        if(dataset.usage[dataset.usage.length - 1].usage > heightestUsage){
-            heightestUsage = dataset.usage[dataset.usage.length - 1].usage
+        if(parseFloat(dataset.usage[dataset.usage.length - 1].usage) > heightestUsage){
+            heightestUsage = parseFloat(dataset.usage[dataset.usage.length - 1].usage)
         }
     });
     console.log(heightestUsage);
