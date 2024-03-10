@@ -166,7 +166,7 @@ function render(){
     let labelHeight = usageSvgLabelContainer.height() / 5;
     for( i = 5; i >= 0; i--){
         usageSvgLabelContainer.append(
-            jQuery("<span>").addClass("svg-usage-label").height(labelHeight).text( ( parseInt( Math.round( ( heightesOverallUsage / 5 ) ) * 100 ) / 100 ) * i + "%")
+            jQuery("<span>").addClass("svg-usage-label").height(labelHeight).text( (  Math.round( heightesOverallUsage / 5 * 100 ) / 100 ) * i + "%")
         )
     }
 }
