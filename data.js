@@ -148,7 +148,7 @@ function render(){
             prevPoint = {"x" : 0, "y" : 0};
         }
         
-        console.log(draw);
+        console.log("draw");
         console.log(point);
         console.log(prevPoint);
         var newLine = document.createElementNS('http://www.w3.org/2000/svg','line');
