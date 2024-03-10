@@ -1,11 +1,12 @@
 
 var datastore = [];
-
+let maxDataStoreLength = 29;
 mainLoop();
 
 async function mainLoop(){
     let freshData = await getData();
-    addData(freshData);
+    sortedData = sortData(freshData);
+    addData(sortedData);
     render();
     console.log(datastore);
     setTimeout(() => {
@@ -14,7 +15,7 @@ async function mainLoop(){
 }
 
 function addData(data){
-    if(datastore.length < 20){
+    if(datastore.length < maxDataStoreLength){
         datastore.push(data);
     } else {
         // rotate the array if its 20 entries long.
@@ -34,6 +35,30 @@ function getData(){
             },
         });
     })
+}
+
+function sortData(data){
+    var sortedData = data;
+    sortedData.usage = data.usage.sort(function (a, b) {
+        if(a.core == "all"){
+            return 1;
+        }
+        if(b.core == "all"){
+            return -1;
+        }
+        return b - a;
+    });
+    return sortedData;
+}
+
+function getHeighestOverallUsage(){
+    var heightestUsage = 0;
+    datastore.forEach(function(dataset){
+        if(dataset.usage[dataset.usage.length - 1].usage > heightestUsage){
+            heightestUsage = dataset.usage[dataset.usage.length - 1].usage
+        }
+    });
+    return heightestUsage;
 }
 
 function render(){
@@ -84,7 +109,7 @@ function render(){
         )
     });
 
-    latestData.top.forEach(element => {
+    latestData.usage.forEach(element => {
         usageTable.append(
             jQuery("<tr>")
                 .addClass("fresh-row")
@@ -97,6 +122,30 @@ function render(){
                         .html(element.usage)
                 )
         )
+    });
+
+    let usageGraphic = jQuery(".usage-graphic");
+    usageGraphic.find("line").remove();
+    usageGraphicWidth = usageGraphic.width;
+    usageGraphicWidthStepsize = usageGraphicWidth / maxDataStoreLength;
+    usageGraphicHeight = usageGraphic.height;
+    usageGraphicHeightStepsize = usageGraphicHeight / getHeighestUsage();
+    usageGraphicHeight = usageGraphic.height;
+    let points = [];
+    datastore.forEach((dataset, index) => {
+        points.push({
+            "x": index * usageGraphicWidthStepsize,
+            "y": dataset.usage[dataset.usage.length - 1] * usageGraphicHeightStepsize,
+        });
+    });
+    points.forEach(function(point, index) {
+        if(index != 0){
+            prevPoint = points[index - 1];
+        } else {
+            prevPoint = {"x" : 0, "y" : 0};
+        }
+        
+        usageGraphic.append('<line x1="' + prevPoint.x + '" y1="' + prevPoint.y + '" x2="' + point.x + '" y2="' + point.y + '" />');
     });
 }
 

@@ -33,7 +33,7 @@ exec('sensors | grep -E "Core|Sensor" | awk \'{print "{ \"core\": \""$1" "$2"\",
     }
     ?> 
 ],
-"top": [
+"usage": [
     <?php
     foreach($output_top as $i => $line){ 
             echo $line;

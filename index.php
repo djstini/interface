@@ -8,7 +8,7 @@
 		table, th, td {
   			border: 1px solid;
 			padding: 5px;
-			width: 100%;
+			width: 300px;
 		}
 		th{
 			background: #88ddd8;
@@ -23,13 +23,7 @@
 			flex-direction: column;
 			row-gap: 20px;
 		}
-		div{
-			padding: 10px;
-			width: 300px;
-			border: 1px solid;
-			background: #cacaca;
-			border-radius: 5px;
-		}
+
 		h2{
 			width: 100%;
 			border-bottom: 1px solid;
@@ -38,6 +32,12 @@
 			color: #000;
 			text-decoration: none;
 		}
+
+		.usage-container{
+			flex-direction: row;
+			column-gap: 1em;
+		}
+
 		@media screen and (max-width: 1230px){
 			body, p, table, td, th{
 				font-size: 35px;			
@@ -62,8 +62,12 @@
 
 <div>
 <h2>DISK SPACE</h2>
+<div class="usage-container">
 <table class="disk-table"><tr><th>SIZE</th><th>USED</th><th>Avail</th><th>Use%</th></tr>
 </table>
+<svg class="usage-graphic" height="300" width="500" xmlns="http://www.w3.org/2000/svg">
+</svg> 
+</div>
 </div>
 
 <div>
