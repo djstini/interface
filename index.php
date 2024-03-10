@@ -48,10 +48,10 @@
 		}
 	</style>
 	<script>
-		RESTURL = "<?php echo $_SERVER['SERVER_NAME'] . "/rest.php"; ?>";
+		let RESTURL = "<?php echo $_SERVER['SERVER_NAME'] . "/rest.php"; ?>";
 	</script>
-	<script src="<?php echo $_SERVER['SERVER_NAME'] . "/jquery.min.js"; ?>" />
-	<script src="<?php echo $_SERVER['SERVER_NAME'] . "/data.js"; ?>" />
+	<script src="/jquery.min.js" />
+	<script src="/data.js" />
 </head>
 
 <?php
