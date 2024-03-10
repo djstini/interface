@@ -155,8 +155,8 @@ function render(){
         newLine.setAttribute('id','line2');
         newLine.setAttribute('x1',prevPoint.x);
         newLine.setAttribute('y1',prevPoint.y);
-        newLine.setAttribute('x2',point.y);
-        newLine.setAttribute('y2',point.x);
+        newLine.setAttribute('x2',point.x);
+        newLine.setAttribute('y2',point.y);
         newLine.setAttribute("stroke", "red")
         newLine.setAttribute("stroke-width", "2")
         usageGraphic.append(newLine);
