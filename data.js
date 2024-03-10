@@ -165,7 +165,7 @@ function render(){
 
     jQuery(".svg-usage-label").remove();
     let usageSvgLabelContainer = jQuery(".usage-svg-labels");
-    let labelHeight = usageSvgLabelContainer.height() / 5;
+    let labelHeight = jQuery("usage-graphic-container").height() / 5;
     for( i = 5; i >= 0; i--){
         usageSvgLabelContainer.append(
             jQuery("<span>").addClass("svg-usage-label").height(labelHeight).text(Math.round(heightesOverallUsage / 5 * 100 ) / 100 * i + "%")
