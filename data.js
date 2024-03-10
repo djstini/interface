@@ -155,9 +155,9 @@ function render(){
         var newLine = document.createElementNS('http://www.w3.org/2000/svg','line');
         newLine.setAttribute('id','line');
         newLine.setAttribute('x1',prevPoint.x);
-        newLine.setAttribute('y1',prevPoint.y);
+        newLine.setAttribute('y1',300 - prevPoint.y);
         newLine.setAttribute('x2',point.x);
-        newLine.setAttribute('y2',point.y);
+        newLine.setAttribute('y2',300 - point.y);
         newLine.setAttribute("stroke", "#613583")
         newLine.setAttribute("stroke-width", "2")
         usageGraphic.append(newLine);
