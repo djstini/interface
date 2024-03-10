@@ -37,10 +37,10 @@
 			display: flex;
 			flex-direction: row;
 			column-gap: 1em;
-		}
-
-		.usage-container>div {
-			min-width: 300px;
+			row-gap: 1em;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
 		}
 
 		.usage-graphic-container{
