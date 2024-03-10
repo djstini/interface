@@ -4,7 +4,8 @@ var datastore = [];
 mainLoop();
 
 async function mainLoop(){
-    await getData();
+    let freshData = await getData();
+    addData(freshData);
     render();
     console.log(datastore);
     setTimeout(() => {
@@ -24,13 +25,15 @@ function addData(data){
 
 
 function getData(){
-    jQuery.ajax({
-        url: RESTURL,
-        success: function (data)  {
-            console.log(data);
-            addData(data);
-        },
-    });
+    return new Promise( (resolve) => {
+        jQuery.ajax({
+            url: RESTURL,
+            success: function (data)  {
+                console.log(data);
+                resolve(data);  
+            },
+        });
+    })
 }
 
 function render(){
