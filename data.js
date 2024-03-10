@@ -163,7 +163,7 @@ function render(){
         usageGraphic.append(newLine);
     });
 
-    jQuery("svg-usage-label").remove();
+    jQuery(".svg-usage-label").remove();
     let usageSvgLabelContainer = jQuery(".usage-svg-lables");
     let labelHeight = usageSvgLabelContainer.height() / 5;
     for( i = 5; i >= 0; i--){
