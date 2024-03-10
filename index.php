@@ -62,19 +62,22 @@
 
 <div>
 <h2>DISK SPACE</h2>
-<div class="usage-container">
 <table class="disk-table"><tr><th>SIZE</th><th>USED</th><th>Avail</th><th>Use%</th></tr>
 </table>
-<svg class="usage-graphic" height="300" width="500" xmlns="http://www.w3.org/2000/svg">
-</svg> 
-</div>
 </div>
 
 <div>
 <h2>PROCESSOR USAGE</h2>
+<div class="usage-container">
 <table class="usage-table">
 <tr><th>CORE (all is the avg across all cores)</th><th>USAGE in %</th></tr>
 </table>
+<svg class="usage-graphic" height="300" width="500" xmlns="http://www.w3.org/2000/svg">
+</svg> 
+<svg height="200" width="300" xmlns="http://www.w3.org/2000/svg">
+  <line x1="0" y1="0" x2="300" y2="200" style="stroke:red;stroke-width:2" />
+</svg> 
+</div>
 </div>
 
 
