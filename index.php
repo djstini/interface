@@ -63,6 +63,8 @@
 			justify-content: center;
 			border: 1px solid;
 			background-color: #88ddd8;
+			padding-left: 1em;
+			padding-right: 1em;
 		}
 
 		@media screen and (max-width: 1230px){
