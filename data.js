@@ -42,7 +42,7 @@ function render(){
     console.log(latestData);
     let disksTable = jQuery(".disk-table");
     let usageTable = jQuery(".usage-table");
-    let temperatureTable = jQuery("temperature-table");
+    let temperatureTable = jQuery(".temperature-table");
 
     jQuery(".fresh-row").remove();
 
