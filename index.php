@@ -43,26 +43,26 @@
 			display:flex;
 			background: #DDD888;
 			border: 1px solid;
+			padding: 1em;
 			height: min-content;
 		}
 
 		.usage-graphic{
 			background: #DDD888;
-			padding: 1em;
 		}
 		
 		.usage-svg-labels{
 			display:flex;
 			flex-direction: column;
-			height: 100%;
-			background: #88ddd8;
+			height: 300px;
 		}
 
 		.usage-svg-labels span {
   			display: flex;
-  			align-items: end;
+  			align-items: center;
+			justify-content: center;
 			border: 1px solid;
-			padding: 0 1em;
+			background-color: #88ddd8;
 		}
 
 		@media screen and (max-width: 1230px){
