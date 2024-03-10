@@ -13,7 +13,7 @@ function mainLoop(){
     }, 1000);
 }
 
-function addData(){
+function addData(data){
     if(datastore.length < 20){
         datastore.push(data);
     } else {
