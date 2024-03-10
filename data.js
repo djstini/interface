@@ -126,11 +126,11 @@ function render(){
 
     let usageGraphic = jQuery(".usage-graphic");
     usageGraphic.find("line").remove();
-    usageGraphicWidth = usageGraphic.width;
+    usageGraphicWidth = usageGraphic.width();
     usageGraphicWidthStepsize = usageGraphicWidth / maxDataStoreLength;
-    usageGraphicHeight = usageGraphic.height;
+    usageGraphicHeight = usageGraphic.height();
     usageGraphicHeightStepsize = usageGraphicHeight / getHeighestOverallUsage();
-    usageGraphicHeight = usageGraphic.height;
+    
     let points = [];
     datastore.forEach((dataset, index) => {
         points.push({
