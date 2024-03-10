@@ -139,7 +139,7 @@ function render(){
     datastore.forEach((dataset, index) => {
         points.push({
             "x": index * usageGraphicWidthStepsize,
-            "y": dataset.usage[dataset.usage.length - 1] * usageGraphicHeightStepsize,
+            "y": parseFloat(dataset.usage[dataset.usage.length - 1]) * usageGraphicHeightStepsize,
         });
     });
     console.log(points);
