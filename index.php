@@ -50,8 +50,8 @@
 	<script>
 		let RESTURL = "<?php echo $_SERVER['SERVER_NAME'] . "/rest.php"; ?>";
 	</script>
-	<script src="/jquery.min.js" />
-	<script src="/data.js" />
+	<script src="/jquery.min.js"></script>
+	<script src="/data.js"></script>
 </head>
 
 <?php
