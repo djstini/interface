@@ -38,6 +38,8 @@ function getData(){
 }
 
 function sortData(data){
+    console.log("sort");
+    console.log(data);
     var sortedData = data;
     sortedData.usage = data.usage.sort(function (a, b) {
         if(a.core == "all"){
@@ -48,6 +50,7 @@ function sortData(data){
         }
         return b - a;
     });
+    console.log(sortedData);
     return sortedData;
 }
 
@@ -58,13 +61,12 @@ function getHeighestOverallUsage(){
             heightestUsage = dataset.usage[dataset.usage.length - 1].usage
         }
     });
+    console.log(heightestUsage);
     return heightestUsage;
 }
 
 function render(){
     let latestData = datastore[datastore.length - 1];
-    console.log(datastore);
-    console.log(latestData);
     let disksTable = jQuery(".disk-table");
     let usageTable = jQuery(".usage-table");
     let temperatureTable = jQuery(".temperature-table");
@@ -130,7 +132,7 @@ function render(){
     usageGraphicWidthStepsize = usageGraphicWidth / maxDataStoreLength;
     usageGraphicHeight = usageGraphic.height();
     usageGraphicHeightStepsize = usageGraphicHeight / getHeighestOverallUsage();
-    
+
     let points = [];
     datastore.forEach((dataset, index) => {
         points.push({
