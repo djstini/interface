@@ -1,5 +1,5 @@
 
-var datastore;
+var datastore = [];
 
 mainLoop();
 
