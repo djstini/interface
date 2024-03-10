@@ -42,6 +42,9 @@
 		.usage-graphic-container{
 			display:flex;
 			background: #DDD888;
+			border: 1px solid;
+			padding: 1em;
+			height: min-content;
 		}
 
 		.usage-graphic{
