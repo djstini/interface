@@ -129,7 +129,7 @@ function render(){
     usageGraphicWidth = usageGraphic.width;
     usageGraphicWidthStepsize = usageGraphicWidth / maxDataStoreLength;
     usageGraphicHeight = usageGraphic.height;
-    usageGraphicHeightStepsize = usageGraphicHeight / getHeighestUsage();
+    usageGraphicHeightStepsize = usageGraphicHeight / getHeighestOverallUsage();
     usageGraphicHeight = usageGraphic.height;
     let points = [];
     datastore.forEach((dataset, index) => {
