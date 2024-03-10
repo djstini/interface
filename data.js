@@ -140,7 +140,7 @@ function render(){
             "y": parseFloat(dataset.usage[dataset.usage.length - 1].usage) * usageGraphicHeightStepsize,
         });
     });
-    console.log(points);
+    
     points.forEach(function(point, index) {
         if(index != 0){
             prevPoint = points[index - 1];
@@ -148,6 +148,9 @@ function render(){
             prevPoint = {"x" : 0, "y" : 0};
         }
         
+        console.log(draw);
+        console.log(point);
+        console.log(prevPoint);
         var newLine = document.createElementNS('http://www.w3.org/2000/svg','line');
         newLine.setAttribute('id','line2');
         newLine.setAttribute('x1',prevPoint.x);
