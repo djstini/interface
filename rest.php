@@ -19,7 +19,7 @@ exec('mpstat -u -P ALL 1 1 | awk \'
 \' | sort -nk1', $output_top);
 
 $output_temp = array();
-exec('sensors | grep -E "Core|Sensor" | awk \'{print "{ \"core\": \""$1" "$2"\", \"temp\": \""$3"\", }"} \'', $output_temp);
+exec('sensors | grep -E "Core|Sensor" | awk \'{print "{ \"core\": \""$1" "$2"\", \"temp\": \""$3"\" }"} \'', $output_temp);
 
 ?>
 { 
@@ -52,5 +52,5 @@ exec('sensors | grep -E "Core|Sensor" | awk \'{print "{ \"core\": \""$1" "$2"\",
             }
         }
     ?>
-],
+]
 }
