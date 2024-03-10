@@ -158,7 +158,7 @@ function render(){
         newLine.setAttribute('y1',prevPoint.y);
         newLine.setAttribute('x2',point.x);
         newLine.setAttribute('y2',point.y);
-        newLine.setAttribute("stroke", "red")
+        newLine.setAttribute("stroke", "#613583")
         newLine.setAttribute("stroke-width", "2")
         usageGraphic.append(newLine);
     });
@@ -168,7 +168,7 @@ function render(){
     let labelHeight = usageSvgLabelContainer.height() / 5;
     for( i = 5; i >= 0; i--){
         usageSvgLabelContainer.append(
-            jQuery("<span>").addClass("svg-usage-label").height(labelHeight).text(heightesOverallUsage / 5 * i)
+            jQuery("<span>").addClass("svg-usage-label").height(labelHeight).text(Math.round(heightesOverallUsage * 100 ) / 100 / 5 * i + "px")
         )
     }
 }

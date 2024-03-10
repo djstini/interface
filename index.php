@@ -41,12 +41,22 @@
 
 		.usage-graphic-container{
 			display:flex;
+			background: #DDD888;
 		}
 
+		.usage-graphic{
+			background: #DDD888;
+		}
+		
 		.usage-svg-labels{
 			display:flex;
 			flex-direction: column;
 			height: 300px;
+		}
+
+		.usage-svg-labels span {
+  			display: flex;
+  			align-items: end;
 		}
 
 		@media screen and (max-width: 1230px){
