@@ -42,6 +42,8 @@ function sortData(data){
     console.log(data);
     var sortedData = data;
     sortedData.usage = data.usage.sort(function (a, b) {
+        a = parseFloat(a);
+        b = parseFloat(b);
         if(a.core == "all"){
             return 1;
         }
