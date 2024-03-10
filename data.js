@@ -138,6 +138,7 @@ function render(){
             "y": dataset.usage[dataset.usage.length - 1] * usageGraphicHeightStepsize,
         });
     });
+    console.log(points);
     points.forEach(function(point, index) {
         if(index != 0){
             prevPoint = points[index - 1];
