@@ -39,6 +39,10 @@
 			column-gap: 1em;
 		}
 
+		.usage-container>div {
+			min-width: 300px;
+		}
+
 		.usage-graphic-container{
 			display:flex;
 			background: #DDD888;
