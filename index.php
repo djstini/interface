@@ -47,6 +47,11 @@
 			}		
 		}
 	</style>
+	<script>
+		RESTURL = "<?php echo $_SERVER['SERVER_NAME'] . "/rest.php"; ?>";
+	</script>
+	<script src="/jquery.min.js" />
+	<script src="/data.js" />
 </head>
 
 <?php
