@@ -62,7 +62,7 @@
   			display: flex;
   			align-items: end;
 			border: 1px solid;
-			padding: 1em;
+			padding: 0 1em;
 		}
 
 		@media screen and (max-width: 1230px){
