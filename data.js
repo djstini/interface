@@ -34,7 +34,7 @@ function getData(){
 }
 
 function render(){
-    let latestData = datastore[datastore.length];
+    let latestData = datastore[datastore.length - 1];
     let disksTable = jQuery(".disk-table");
     let usageTable = jQuery(".usage-table");
     let temperatureTable = jQuery("temperature-table");
