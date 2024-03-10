@@ -153,8 +153,9 @@ function render(){
         newLine.setAttribute('x1',prevPoint.x);
         newLine.setAttribute('y1',prevPoint.y);
         newLine.setAttribute('x2',point.y);
-        newLine.setAttribute('y2','300');
+        newLine.setAttribute('y2',point.x);
         newLine.setAttribute("stroke", "red")
+        newLine.setAttribute("stroke-width", "2")
         usageGraphic.append(newLine);
     });
 }
