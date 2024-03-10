@@ -42,15 +42,15 @@ function sortData(data){
     console.log(data);
     var sortedData = data;
     sortedData.usage = data.usage.sort(function (a, b) {
-        a = parseFloat(a);
-        b = parseFloat(b);
         if(a.core == "all"){
             return 1;
         }
         if(b.core == "all"){
             return -1;
         }
-        return b - a;
+        a.usage = parseFloat(a.usage);
+        b.usage = parseFloat(b.usage);
+        return b.usage - a.usage;
     });
     console.log(sortedData);
     return sortedData;
