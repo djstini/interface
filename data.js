@@ -3,8 +3,8 @@ var datastore = [];
 
 mainLoop();
 
-function mainLoop(){
-    getData();
+async function mainLoop(){
+    await getData();
     render();
     console.log(datastore);
     setTimeout(() => {
