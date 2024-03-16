@@ -4,12 +4,11 @@
 	<style>
 		table{
 			border-collapse: collapse;	
-			width: 100%;
-			min-width: 300px;
 		}
 		table, th, td {
   			border: 1px solid;
 			padding: 5px;
+			width: 300px;
 		}
 		th{
 			background: #88ddd8;
@@ -29,33 +28,6 @@
 			width: 100%;
 			border-bottom: 1px solid;
 		}
-
-		.info-wrapper{
-			display: flex;
-			flex-wrap: wrap;
-			column-gap: 2em;
-			row-gap: 2em;
-		}
-
-		.info-item{
-			background: #a0a0a0;
-			padding: 1em;
-			border: 2px solid black;
-			box-shadow: .2em .2em #535353;
-			width: min-content;
-			height: min-content;
-			transform: scale(1);
-			transition: 250ms;
-			margin: 0;
-		}
-
-		.info-item:hover{
-			transform: scale(1.1);
-			z-index: 10000;
-			box-shadow: .5em .5em black;
-			margin: 2em;
-		}
-
 		.no-decoration{
 			color: #000;
 			text-decoration: none;
@@ -69,8 +41,6 @@
 			flex-wrap: wrap;
 			justify-content: center;
 			align-items: center;
-			width: 100%;
-			min-width: 300px;
 		}
 
 		.usage-graphic-container{
@@ -109,13 +79,6 @@
 				width: 90% !important;
 			}		
 		}
-
-		@media screen and (max-width: 800px){
-			.info-item:hover{
-				margin: 2em 0 !important;
-				transform: scale(1, 1.1) !important;
-			}
-		}
 	</style>
 	<script>
 		let RESTURL = "<?php echo "https://" . $_SERVER['SERVER_NAME'] . "/rest.php"; ?>";
@@ -129,33 +92,29 @@
 <div>
 <p>Oh hi there!, if you've just stumbled across this then welcome. This is just some private ressource logging of one of my servers.. Soo umm maybe check out my website or sth. <a href="https://dennis-stinauer.de">dennis-stinauer.de</a></p>
 </div>
-<div class="info-wrapper">
-	<div class="info-item">
-	<h2>DISK SPACE</h2>
-	<table class="disk-table"><tr><th>SIZE</th><th>USED</th><th>Avail</th><th>Use%</th></tr>
-	</table>
-	</div>
 
-	<div class="info-item">
+<div>
+<h2>DISK SPACE</h2>
+<table class="disk-table"><tr><th>SIZE</th><th>USED</th><th>Avail</th><th>Use%</th></tr>
+</table>
+</div>
+
+<div>
 	<h2>PROCESSOR USAGE</h2>
 	<div class="usage-container">
 		<table class="usage-table">
 		<tr><th>CORE (all is the avg across all cores)</th><th>USAGE in %</th></tr>
 		</table>
-	</div>
-	</div>
-	<div class="info-item">
-	<h2>USAGE GRAPH</h2>	
-	<div class="usage-graphic-container">
+		<div class="usage-graphic-container">
 			<svg class="usage-graphic" height="300" width="500" xmlns="http://www.w3.org/2000/svg">
 			</svg>
 			<div class="usage-svg-labels"></div>
 		</div>
 	</div>
-	<div class="info-item">
-	<h2>Temperatures in C</h2>
-	<table class="temperature-table">
-	<tr><th>Sensor</th><th>Temperature</th></tr>
-	</table>
-	</div>
+</div>
+
+<div>
+<h2>Temperatures in C</h2>
+<table class="temperature-table">
+</table>
 </div>
