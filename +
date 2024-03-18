@@ -1,11 +1,7 @@
 <?php header("X-Robots-Tag: noindex, nofollow", true); ?>
 
 <head>
-		<style>
-		@font-face {
-		  font-family: "Dotfont";
-		  src: url("dotfont.ttf");
-		}
+	<style>
 		table{
 			border-collapse: collapse;	
 			width: 100%;
@@ -27,12 +23,7 @@
 			justify-content: center;
 			flex-direction: column;
 			row-gap: 20px;
-background-color: #ddd888;
-background-image:  linear-gradient(30deg, #888ddd 12%, transparent 12.5%, transparent 87%, #888ddd 87.5%, #888ddd), linear-gradient(150deg, #888ddd 12%, transparent 12.5%, transparent 87%, #888ddd 87.5%, #888ddd), linear-gradient(30deg, #888ddd 12%, transparent 12.5%, transparent 87%, #888ddd 87.5%, #888ddd), linear-gradient(150deg, #888ddd 12%, transparent 12.5%, transparent 87%, #888ddd 87.5%, #888ddd), linear-gradient(60deg, #888ddd77 25%, transparent 25.5%, transparent 75%, #888ddd77 75%, #888ddd77), linear-gradient(60deg, #888ddd77 25%, transparent 25.5%, transparent 75%, #888ddd77 75%, #888ddd77);
-background-size: 44px 77px;
-background-position: 0 0, 0 0, 22px 39px, 22px 39px, 0 0, 22px 39px;
-font-family: "Dotfont", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-}
+		}
 
 		h2{
 			width: 100%;
@@ -47,7 +38,9 @@ font-family: "Dotfont", Impact, Haettenschweiler, "Arial Narrow Bold", sans-seri
 		}
 
 		.info-item{
-			background: #fff;
+			background: #a0a0a0;
+			filter: contrast(170%) brightness(1000%);
+			background: linear-gradient(0deg, rgba(0,0,255,1), rgba(0,0,0,0)), url(/noise.svg);
 			padding: 1em;
 			border: 2px solid black;
 			box-shadow: .2em .2em #535353;
@@ -58,27 +51,11 @@ font-family: "Dotfont", Impact, Haettenschweiler, "Arial Narrow Bold", sans-seri
 			margin: 0;
 		}
 
-		h1{
-			font-size: 80px;
-			font-weight: bold;
-			color: black;
-			-webkit-text-fill-color: white;
-			-webkit-text-stroke-width: 3px;
-			-webkit-text-stroke-color: black;
-		}
-
 		.info-item:hover{
 			transform: scale(1.1);
 			z-index: 10000;
 			box-shadow: .5em .5em black;
 			margin: 2em;
-		}
-
-		.entry-text{
-			background: #fff;
-			padding: 1em;
-			box-shadow: .2em .2em #535353;
-			border: 2px solid #000;
 		}
 
 		.no-decoration{
@@ -149,10 +126,10 @@ font-family: "Dotfont", Impact, Haettenschweiler, "Arial Narrow Bold", sans-seri
 	<script src="/data.js"></script>
 </head>
 
-<h1><a class="no-decoration header" href="/">INTERFACE</a></h1>
+<h1><a class="no-decoration" href="/">INTERFACE</a></h1>
 
 <div>
-<p class="entry-text">Oh hi there!, if you've just stumbled across this then welcome. This is just some private ressource logging of one of my servers.. Soo umm maybe check out my website or sth. <a href="https://dennis-stinauer.de">dennis-stinauer.de</a></p>
+<p>Oh hi there!, if you've just stumbled across this then welcome. This is just some private ressource logging of one of my servers.. Soo umm maybe check out my website or sth. <a href="https://dennis-stinauer.de">dennis-stinauer.de</a></p>
 </div>
 <div class="info-wrapper">
 	<div class="info-item">
